@@ -1,0 +1,42 @@
+:host {
+  display: inline-block;
+  text-align: center;
+}
+
+#container_div {
+  width: 290px;
+  font-weight: 200;
+  line-height: 20px;
+  background-color: #f5f5ed;
+  border-radius: 6px;
+  margin-top: -10px;
+  padding: 5px;
+  opacity:0.9;
+  text-align: center;
+}
+
+#container_div h2 {
+  font-size: 1.6em;
+  margin-top: 10px;
+}
+
+paper-input {
+	width: 210px;
+}
+
+paper-fab.green {
+	background: #91b52c;
+    /*color: #000;*/
+}
+
+#title {
+  margin-top: 10px;
+  color: #6E6E6E;
+  font-size: 1.4em;
+  line-height: 30px;
+}
+
+#success_h2 {
+  line-height: 30px;
+
+}

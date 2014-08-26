@@ -1,0 +1,40 @@
+html { 
+  background: url(/images/envision_plan_act_background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  color: #6E6E6E;  /* green 91b52c */
+}
+
+.hero-unit {
+  /*margin: 50px auto 0 auto;*/
+  margin: 25px auto 0 auto;
+  min-width: 300px;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 30px;
+  /*background-color: #eee;*/
+  /*border-radius: 6px;*/
+  padding: 20px;
+  /*opacity:0.2;*/
+  text-align: center;
+}
+
+.hero-unit h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

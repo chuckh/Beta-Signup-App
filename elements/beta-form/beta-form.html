@@ -1,0 +1,112 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+<!-- <link rel="import" href="../../bower_components/polymer-jsonp/polymer-jsonp.html"> -->
+<link rel="import" href="../../bower_components/firebase-element/firebase-element.html">
+
+
+<polymer-element name="beta-form" attributes="">
+
+  <template>
+
+  <!-- <polymer-jsonp id="add_madmimi_request_jsonp"
+      url="//api.madmimi.com/audience_lists/01-Actionplanr Web Beta Invite/add?email=test@hware.com&api_key=xxx&username=example@test.comcom&callback=?"
+      ></polymer-jsonp> -->
+
+    <firebase-element id="add_firebase" on-data-change="{{dataChange}}" data="{{betaInvite}}" location="https://beta-invite.firebaseio.com" keys="{{keys}}" log></firebase-element>
+
+    <core-ajax id="add_madmimi_request" 
+      url="//actionplanr.com/beta-signup/app/madmimi.php?email={{email}}"
+      handleAs="text"
+      on-core-response="{{ajaxResponse}}"
+            ></core-ajax>
+
+    <link rel="stylesheet" href="beta-form.css">
+
+    <div id="container_div" vertical layout center>
+      <h3 id="title">Actionplanr Beta coming soon by invitation only. <br>Get yours:</h3>
+      <div id="form_div" horizontal layout center>
+        <paper-input id="email_input" label="Input Email" type="email" value="polmertest@hware.com"
+        validate="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" error=" "
+  required></paper-input><br>
+        <paper-fab icon="check" class="fab-success green" on-click="{{saveData}}" style="background: #D0F5A9;" ></paper-fab>
+      </div>
+
+      <div id="success" hidden>
+        <h3>{{email}}</h3>
+        <h2 id="success_h2">Thank you for requesting <br>a beta invite!</h2>
+        <p>We will email you when it is ready.</p>
+        <p>Get latest on planning at our blog <a href="//actionplanr.com/blog">actionplanr.com/blog</a></p>
+      </div>
+    </div>
+  </template>
+  <script>
+      // var ajax = document.querySelector('core-ajax');
+      // ajax.addEventListener('core-response', function(e) {
+      //   console.log(this.response);
+      // });
+
+    (function () {
+      'use strict';
+
+      Polymer({
+        // define element prototype here
+        // status: 'blank',  // blank, add, loaded, changed, added, saved, cancelled
+        // email: "",
+
+        ready: function() {
+          this.status = 'blank';  // blank, add, loaded, changed, added, saved, cancelled
+          this.email = "polymer1test@hware.com";
+        },
+
+        // responseChanged: function(oldValue) {
+        //     console.log(this.response);
+        // },
+
+
+        ajaxResponse: function(event, response) {
+            console.log("ajaxResponse: ", response);
+        },
+
+        saveData: function() {
+          var timestamp = new Date();
+          var email = this.$.email_input.value;
+          var atpos = email.indexOf("@");
+          var dotpos = email.lastIndexOf(".");
+          if (atpos < 1 || dotpos<atpos+2 || dotpos + 2 >= email.length) {
+              this.$.email_input.error="Not a valid email";
+              console.log('saveData email NOT VALID: ' +  this.$.email_input.value, timestamp.toLocaleString());  
+              alert(email + "\n\nNot a valid e-mail address, try again");
+              this.email = "";
+          } else {
+            this.email = email;
+            //this.$.add_madmimi_request_jsonp.go();
+            this.$.add_madmimi_request.go();
+            console.log('saveData email: ' +  this.$.email_input.value, timestamp.toLocaleString());  
+            this.status = 'saved';
+            this.$.form_div.hidden = true;
+            this.$.title.hidden = true;
+            this.$.success.hidden = false;
+            //this.addEntry(email);
+            this.$.base.commitProperty(email);
+
+          }
+        },
+
+        dataChange: function(event) {
+          console.log('dataChange ', 'data:', event.detail.value,this.betaInvite);
+          //this.$.section_title.value = "SECTION TITLE TEST"
+        },
+ 
+        addEntry: function(value) {
+          this.$.base.push({email: value});
+          this.$.email_input.value = "";
+        }
+
+      });
+
+    })();
+  </script>
+</polymer-element>

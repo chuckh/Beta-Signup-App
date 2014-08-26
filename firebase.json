@@ -1,0 +1,9 @@
+{
+  "firebase": "beta-invite",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
