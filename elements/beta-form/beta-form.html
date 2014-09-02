@@ -15,20 +15,19 @@
       url="//api.madmimi.com/audience_lists/01-Actionplanr Web Beta Invite/add?email=test@hware.com&api_key=xxx&username=example@test.comcom&callback=?"
       ></polymer-jsonp> -->
 
-    <firebase-element id="add_firebase" on-data-change="{{dataChange}}" data="{{betaInvite}}" location="https://beta-invite.firebaseio.com" keys="{{keys}}" log></firebase-element>
+    <!-- <firebase-element id="add_firebase" on-data-change="{{dataChange}}" data="{{betaInvite}}" location="https://beta-invite.firebaseio.com/requests" keys="{{keys}}" log></firebase-element> -->
 
     <core-ajax id="add_madmimi_request" 
-      url="//actionplanr.com/beta-signup/app/madmimi.php?email={{email}}"
+      url="//actionplanr.com/beta-signup/app/madmimi.php?email={{email}}&create_at={{timestamp}}"
       handleAs="text"
-      on-core-response="{{ajaxResponse}}"
-            ></core-ajax>
+      on-core-response="{{ajaxResponse}}"></core-ajax>
 
     <link rel="stylesheet" href="beta-form.css">
 
     <div id="container_div" vertical layout center>
       <h3 id="title">Actionplanr Beta coming soon by invitation only. <br>Get yours:</h3>
       <div id="form_div" horizontal layout center>
-        <paper-input id="email_input" label="Input Email" type="email" value="polmertest@hware.com"
+        <paper-input id="email_input" label="Input Email" type="email" 
         validate="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" error=" "
   required></paper-input><br>
         <paper-fab icon="check" class="fab-success green" on-click="{{saveData}}" style="background: #D0F5A9;" ></paper-fab>
@@ -58,13 +57,9 @@
 
         ready: function() {
           this.status = 'blank';  // blank, add, loaded, changed, added, saved, cancelled
-          this.email = "polymer1test@hware.com";
+          this.email = "";
+          this.timestamp = new Date();
         },
-
-        // responseChanged: function(oldValue) {
-        //     console.log(this.response);
-        // },
-
 
         ajaxResponse: function(event, response) {
             console.log("ajaxResponse: ", response);
@@ -82,15 +77,20 @@
               this.email = "";
           } else {
             this.email = email;
-            //this.$.add_madmimi_request_jsonp.go();
+            this.timestamp = new Date();
             this.$.add_madmimi_request.go();
+
+            new Firebase('https://beta-invite.firebaseio.com/requests').push({
+              email: email,
+              create_at: timestamp.toLocaleString(),
+              create_at_full: timestamp.toString()
+            });
+
             console.log('saveData email: ' +  this.$.email_input.value, timestamp.toLocaleString());  
             this.status = 'saved';
             this.$.form_div.hidden = true;
             this.$.title.hidden = true;
             this.$.success.hidden = false;
-            //this.addEntry(email);
-            this.$.base.commitProperty(email);
 
           }
         },
@@ -100,11 +100,6 @@
           //this.$.section_title.value = "SECTION TITLE TEST"
         },
  
-        addEntry: function(value) {
-          this.$.base.push({email: value});
-          this.$.email_input.value = "";
-        }
-
       });
 
     })();
