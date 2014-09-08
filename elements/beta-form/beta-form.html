@@ -27,9 +27,8 @@
     <div id="container_div" vertical layout center>
       <h3 id="title">Actionplanr Beta coming soon by invitation only. <br>Get yours:</h3>
       <div id="form_div" horizontal layout center>
-        <paper-input id="email_input" label="Input Email" type="email" 
-        validate="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" error=" "
-  required></paper-input><br>
+        <paper-input id="email_input" label="Input Email" type="email" type="email" error="Input is not an email!"
+  required></paper-input><br> <!-- validate="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" error=" " -->
         <paper-fab icon="check" class="fab-success green" on-click="{{saveData}}" style="background: #D0F5A9;" ></paper-fab>
       </div>
 
