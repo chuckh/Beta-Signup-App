@@ -7,7 +7,7 @@ temp/
 test/temp
 z_archive/
 .sass-cache
-app/bower_components
+#app/bower_components
 app/madmimi.php
 app/zArchive
 .tmp
