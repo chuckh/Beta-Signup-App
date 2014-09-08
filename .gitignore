@@ -2,7 +2,13 @@ node_modules/
 *-boilerplate/
 tmp/
 node_modules
+dist
 temp/
+test/temp
 z_archive/
-.DS_Store
-madmimi.php
+.sass-cache
+app/bower_components
+app/madmimi.php
+app/zArchive
+.tmp
+test/bower_components/
