@@ -11,14 +11,8 @@
 
   <template>
 
-  <!-- <polymer-jsonp id="add_madmimi_request_jsonp"
-      url="//api.madmimi.com/audience_lists/01-Actionplanr Web Beta Invite/add?email=test@hware.com&api_key=xxx&username=example@test.comcom&callback=?"
-      ></polymer-jsonp> -->
-
-    <!-- <firebase-element id="add_firebase" on-data-change="{{dataChange}}" data="{{betaInvite}}" location="https://beta-invite.firebaseio.com/requests" keys="{{keys}}" log></firebase-element> -->
-
-    <core-ajax id="add_madmimi_request" 
-      url="//actionplanr.com/beta-signup/app/madmimi.php?email={{email}}&create_at={{timestamp}}"
+    <core-ajax id="add_madmimi_request"
+      url="madmimi.php?email={{email}}&create_at={{timestamp}}"
       handleAs="text"
       on-core-response="{{ajaxResponse}}"></core-ajax>
 
@@ -41,18 +35,11 @@
     </div>
   </template>
   <script>
-      // var ajax = document.querySelector('core-ajax');
-      // ajax.addEventListener('core-response', function(e) {
-      //   console.log(this.response);
-      // });
 
     (function () {
       'use strict';
 
       Polymer({
-        // define element prototype here
-        // status: 'blank',  // blank, add, loaded, changed, added, saved, cancelled
-        // email: "",
 
         ready: function() {
           this.status = 'blank';  // blank, add, loaded, changed, added, saved, cancelled
@@ -71,8 +58,8 @@
           var dotpos = email.lastIndexOf(".");
           if (atpos < 1 || dotpos<atpos+2 || dotpos + 2 >= email.length) {
               this.$.email_input.error="Not a valid email";
-              console.log('saveData email NOT VALID: ' +  this.$.email_input.value, timestamp.toLocaleString());  
-              alert(email + "\n\nNot a valid e-mail address, try again");
+              console.log('saveData email NOT VALID: ' +  this.$.email_input.value, timestamp.toLocaleString());
+              alert(email + "\n\nNot a valid e-mail address, please try again!");
               this.email = "";
           } else {
             this.email = email;
@@ -85,7 +72,7 @@
               create_at_full: timestamp.toString()
             });
 
-            console.log('saveData email: ' +  this.$.email_input.value, timestamp.toLocaleString());  
+            console.log('saveData email: ' +  this.$.email_input.value, timestamp.toLocaleString());
             this.status = 'saved';
             this.$.form_div.hidden = true;
             this.$.title.hidden = true;
@@ -96,9 +83,8 @@
 
         dataChange: function(event) {
           console.log('dataChange ', 'data:', event.detail.value,this.betaInvite);
-          //this.$.section_title.value = "SECTION TITLE TEST"
         },
- 
+
       });
 
     })();
