@@ -5,7 +5,7 @@ node_modules
 dist
 temp/
 test/temp
-z_archive/
+zArchive/
 .sass-cache
 #app/bower_components
 app/madmimi.php
