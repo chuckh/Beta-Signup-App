@@ -22,6 +22,6 @@ Beta Signup App is released under the [MIT License.](http://www.opensource.org/l
 
 Trademarks of [Hware, LLC](http://www.hware.com)
 ===============
-Actionplanr™
-Envision Plan Act™
-Envision Plan Act Track Adapt™
+* Actionplanr™
+* Envision Plan Act™
+* Envision Plan Act Track Adapt™
