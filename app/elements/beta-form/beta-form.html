@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="beta-form.css">
 
     <div id="container_div" vertical layout center>
-      <h3 id="title">Actionplanr Beta coming soon by invitation only.<br>Get yours:</h3>
+      <h3 id="title_message">Actionplanr Beta coming<br> soon by invitation only.<br>Get yours:</h3>
       <div id="form_div" horizontal layout center>
         <paper-input id="email_input" label="Input Email" type="email" error="Input is not an email!" on-enter="{{saveData}}" on-keypress="{{ keypressAction }}"
   required></paper-input><br> <!-- validate="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" error=" " -->
-        <paper-fab icon="check" class="fab-success green" on-click="{{saveData}}" style="background: #D0F5A9;" ></paper-fab>
+        <paper-fab id"submit_input" icon="check" class="fab-success green" on-click="{{saveData}}" style="background: #D0F5A9;" ></paper-fab>
       </div>
 
       <div id="success" hidden>
@@ -52,12 +52,12 @@
 
         saveData: function() {
           var timestamp = new Date();
-          var email = this.$.email_input.value;
+          var email = this.$.email_input.inputValue;
           var atpos = email.indexOf("@");
           var dotpos = email.lastIndexOf(".");
           if (atpos < 1 || dotpos<atpos+2 || dotpos + 2 >= email.length) {
               this.$.email_input.error="Not a valid email";
-              console.log('saveData email NOT VALID: ' +  this.$.email_input.value, timestamp.toLocaleString());
+              //console.log('saveData email NOT VALID: ' +  this.$.email_input.inputValue, timestamp.toLocaleString());
               alert(email + "\n\nNot a valid e-mail address, please try again!");
               this.email = "";
           } else {
@@ -71,17 +71,13 @@
               create_at_full: timestamp.toString()
             });
 
-            console.log('saveData email: ' +  this.$.email_input.value, timestamp.toLocaleString());
+            console.log('saveData email: ' +  this.$.email_input.inputValue, timestamp.toLocaleString());
             this.status = 'saved';
             this.$.form_div.hidden = true;
-            this.$.title.hidden = true;
+            this.$.title_message.hidden = true;
             this.$.success.hidden = false;
 
           }
-        },
-
-        dataChange: function(event) {
-          console.log('dataChange ', 'data:', event.detail.value,this.betaInvite);
         },
 
         // Save on "Enter Key"
@@ -89,7 +85,7 @@
           var code = ev.keyCode || ev.charCode;
           var key = ev.keyIdentifier;
           if (key === 'Enter' || code === 13) {
-            // var target = ev.target;
+            //console.log("keypressAction email_input value: ", this.$.email_input.inputValue, key, code)
             this.saveData();
           }
         }
