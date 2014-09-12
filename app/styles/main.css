@@ -74,3 +74,9 @@ body {
   color: #000;
   padding: 0.2em 0;
 }
+
+.footer {
+  /*font-weight: bold;*/
+  margin: auto;
+  text-align: center;
+}
