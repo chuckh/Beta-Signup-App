@@ -1,5 +1,6 @@
-html { 
-  background: url(/images/envision_plan_act_background.jpg) no-repeat center center fixed; 
+@import url("media-query-background.css");
+
+html {  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
