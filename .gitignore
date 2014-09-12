@@ -10,5 +10,6 @@ zArchive/
 #app/bower_components
 app/madmimi.php
 app/zArchive
+app//images/zArchive
 .tmp
 test/bower_components/

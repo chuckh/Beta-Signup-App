@@ -19,3 +19,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Except for these files:
+
+* Any files prefixed with actionplanr or apr are Hware LLC Copyright © All Rights Reserved
+* favicon.ico files are Hware LLC Copyright © All Rights Reserved
+
+Trademarks of [Hware, LLC](www.hware.com)
+------------------------------------------
+Actionplanr™
+Envision Plan Act™
+Envision Plan Act Track Adapt™
