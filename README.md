@@ -7,8 +7,8 @@ See it in action at http://actionplanr.com/beta-signup/index.html.
 
 Contributors
 ===============
-Chuck Horton #chuck
-Skye Lambert #gorillarabbit
+* Chuck Horton [chuck](https://github.com/chuckh)
+* Skye Lambert [gorillarabbit](https://github.com/gorillarabbit)
 
 License
 ===============
