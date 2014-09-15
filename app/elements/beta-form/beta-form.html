@@ -11,12 +11,12 @@
 
   <template>
 
-    <paper-dialog id="dialog1" heading="Actionplanr Message" >
-      <p>{{email1}}</p>
-      <p>{{dialogMessage}}</p>
+    <paper-dialog id="dialog1" heading="Message" style="font-size: 0.8em" >
+      <p style="font-size: 1.8em">{{email1}}</p>
+      <p style="font-size: 1.3em">{{dialogMessage}}</p>
       <!-- <paper-button label="More Info..." dismissive></paper-button> -->
       <paper-button label="Cancel" affirmative hidden></paper-button>
-      <paper-button label="OK" affirmative autofocus></paper-button>
+      <paper-button label="OK" affirmative autofocus style="font-size: 1.4em" ></paper-button>
     </paper-dialog>
 
     <core-ajax id="add_madmimi_request"
