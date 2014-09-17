@@ -43,6 +43,7 @@ paper-fab.green {
 }
 
 paper-dialog {
-  width: 260px;
+  width: 290px;
+  font-size: 16px;
   background-color: #F5A9A9;
 }
