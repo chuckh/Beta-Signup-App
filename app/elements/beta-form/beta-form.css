@@ -11,6 +11,7 @@
   border-radius: 6px;
   margin-top: -10px;
   padding: 5px;
+  padding-bottom: 20px;
   opacity:0.9;
   text-align: center;
 }
@@ -39,4 +40,9 @@ paper-fab.green {
 #success_h2 {
   line-height: 30px;
 
+}
+
+paper-dialog {
+  width: 260px;
+  background-color: #F5A9A9;
 }
