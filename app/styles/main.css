@@ -1,3 +1,8 @@
+body, html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}  
 /* @import url("media-query-background.css");* grunt build does not handle imports in vesion 0.4.1 of yo polymer */
 /* If app is not in website root directory, you have to copy images directory to website root directory */
 @media (max-width: 300px) and (max-height: 507px) (orientation: portrait),  /*phone in portrait or small-narrow monitor window - wider picture for switching to landscape*/
@@ -60,6 +65,8 @@ body {
   padding: 20px;
   /*opacity:0.2;*/
   text-align: center;
+  /*height: 300px;*/
+  border: 2px solid red;
 }
 
 .hero-unit h1 {
