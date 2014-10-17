@@ -1,6 +1,6 @@
 {
   "name": "beta-signup",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "dependencies": {
     "core-elements": "Polymer/core-elements#~0.4.0",
     "paper-elements": "Polymer/paper-elements#~0.4.0",

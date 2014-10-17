@@ -2,7 +2,7 @@ body, html {
 	height: 100%;
 	width: 100%;
 	margin: 0;
-}  
+}
 /* @import url("media-query-background.css");* grunt build does not handle imports in vesion 0.4.1 of yo polymer */
 /* If app is not in website root directory, you have to copy images directory to website root directory */
 @media (max-width: 300px) and (max-height: 507px) (orientation: portrait),  /*phone in portrait or small-narrow monitor window - wider picture for switching to landscape*/
@@ -51,6 +51,8 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   color: #6E6E6E;  /* green 91b52c */
+  font-size: 18px;
+
 }
 
 .hero-unit {
@@ -66,7 +68,7 @@ body {
   /*opacity:0.2;*/
   text-align: center;
   /*height: 300px;*/
-  border: 2px solid red;
+  /*border: 2px solid red;*/
 }
 
 .hero-unit h1 {
@@ -91,5 +93,5 @@ body {
   background-color: #f5f5ed;
   border-radius: 6px;
   opacity: 0.8;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
