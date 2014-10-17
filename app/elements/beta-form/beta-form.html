@@ -1,10 +1,12 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/core-icons/core-icons.html">
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/firebase-element/firebase-element.html">
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/font-roboto/roboto.html">
 
 
 <polymer-element name="beta-form" attributes="">
@@ -15,8 +17,8 @@
       <p style="font-size: 1.8em">{{email1}}</p>
       <p style="font-size: 1.4em">{{dialogMessage}}</p>
       <!-- <paper-button label="More Info..." dismissive></paper-button> -->
-      <paper-button label="Cancel" raisedButton hidden></paper-button>
-      <paper-button label="OK" raisedButton affirmative autofocus style="font-size: 1.6em" ></paper-button>
+      <paper-button raised hidden></paper-button>
+      <paper-button raised affirmative autofocus style="font-size: 1.6em" >Ok</paper-button>
     </paper-dialog>
 
     <core-ajax id="add_madmimi_request"
@@ -29,7 +31,7 @@
     <div id="container_div" vertical layout center>
       <h3 id="title_message">For your projects & tasks.<br>Actionplanr Web App Beta<br> coming soon by invitation only.<br>Get yours:</h3>
       <div id="form_div" horizontal layout center>
-        <paper-input id="email_input" label="Input Email" type="email" on-enter="{{saveData}}" on-keypress="{{keypressAction}}"
+        <paper-input id="email_input" label="Input Email" type="email" on-enter="{{saveData}}" on-keypress="{{keypressAction}}" error=" "
   ></paper-input><br> <!-- validate="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" error=" "  error="Input is not an email!" required -->
         <paper-fab id"submit_input" icon="check" class="fab-success green" on-click="{{saveData}}" style="background: #D0F5A9;" ></paper-fab>
       </div>

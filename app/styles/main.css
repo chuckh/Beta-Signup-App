@@ -51,6 +51,8 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   color: #6E6E6E;  /* green 91b52c */
+  font-size: 18px;
+
 }
 
 .hero-unit {
@@ -91,5 +93,5 @@ body {
   background-color: #f5f5ed;
   border-radius: 6px;
   opacity: 0.8;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
