@@ -1,37 +1,42 @@
+body, html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}  
 /* @import url("media-query-background.css");* grunt build does not handle imports in vesion 0.4.1 of yo polymer */
 /* If app is not in website root directory, you have to copy images directory to website root directory */
 @media (max-width: 300px) and (max-height: 507px) (orientation: portrait),  /*phone in portrait or small-narrow monitor window - wider picture for switching to landscape*/
 (max-width: 507px) and (orientation: landscape) { /*phone in landscape or small-wide monitor window*/
   html {
-    background: url(/images/envision_plan_act_background/small.png) no-repeat center center fixed;
+    background: url(/images/envision_plan_act_background/small.jpg) no-repeat center center fixed;
   }
 }
 @media (min-width: 301px) and (max-width: 600px) and (orientation: portrait), /*phablet in portrait or small-medium-narrow monitor window*/
 (min-width: 507px) and (max-width: 1014px) and (orientation: landscape), /*phablet in landscape or small-medium-wide monitor window*/
 (min-height: 508px) and (max-height: 1014px) and (orientation: portrait) { /*account for extra-tall window*/
   html {
-    background: url(/images/envision_plan_act_background/small_medium.png) no-repeat center center fixed;
+    background: url(/images/envision_plan_act_background/small_medium.jpg) no-repeat center center fixed;
   }
 }
 @media (min-width: 601px) and (max-width: 900px) and (orientation: portrait), /*tablet in portrait or medium-narrow monitor window*/
 (min-width: 1015px) and (max-width: 1521px) and (orientation: landscape), /*tablet in landscape or medium-wide monitor window*/
 (min-height: 1015px) and (max-height: 1521px) and (orientation: portrait) { /*account for extra-tall window*/
   html {
-    background: url(/images/envision_plan_act_background/medium.png) no-repeat center center fixed;
+    background: url(/images/envision_plan_act_background/medium.jpg) no-repeat center center fixed;
   }
 }
 @media (min-width: 901px) and (max-width: 1200px) and (orientation: portrait), /*medium-large tablet in portait or large-narrow monitor window*/
 (min-width: 1522px) and (max-width: 2028px) and (orientation: landscape), /*medium-large tablet in landscape or large-wide monitor window*/
 (min-height: 1522px) and (max-height: 2028px) and (orientation: portrait) { /*account for extra-tall window*/
   html {
-    background: url(/images/envision_plan_act_background/medium_large.png) no-repeat center center fixed;
+    background: url(/images/envision_plan_act_background/medium_large.jpg) no-repeat center center fixed;
   }
 }
 @media (min-width: 1201px) and (orientation: portrait), /*large-narrow monitor window*/
 (min-width: 2029px) and (orientation: landscape), /*large-wide monitor window*/
 (min-height: 2029px) and (orientation: portrait) { /*account for extra-tall window*/
   html {
-    background: url(/images/envision_plan_act_background/large.png) no-repeat center center fixed;
+    background: url(/images/envision_plan_act_background/large.jpg) no-repeat center center fixed;
   }
 }
 
@@ -60,6 +65,8 @@ body {
   padding: 20px;
   /*opacity:0.2;*/
   text-align: center;
+  /*height: 300px;*/
+  border: 2px solid red;
 }
 
 .hero-unit h1 {
@@ -77,6 +84,12 @@ body {
 
 .footer {
   /*font-weight: bold;*/
+  width: 210px;
   margin: auto;
+  padding: 10px;
   text-align: center;
+  background-color: #f5f5ed;
+  border-radius: 6px;
+  opacity: 0.8;
+  font-size: 0.9em;
 }
