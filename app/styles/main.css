@@ -84,6 +84,16 @@ body {
   padding: 0.2em 0;
 }
 
+.video {
+	margin: 20px auto;
+	padding: 0px;
+	width: 500px;
+	height: 281px;
+	/*border: 2px solid black;*/
+	border: 2px solid #91b52c;
+
+}
+
 .footer {
   /*font-weight: bold;*/
   width: 210px;
